@@ -27,13 +27,39 @@ var g = svg.append("g")
            .attr("id","graph")
            .attr("transform","translate("+margin.left+","+margin.top+")");
 
+d3.select("#red-bubble")
+  .append("circle")
+  .attr("cx","1em")
+  .attr("cy","1em")
+  .attr("r","10")
+  .attr("fill","red");
+
+d3.select("#blue-bubble")
+  .append("circle")
+  .attr("cx","1em")
+  .attr("cy","1em")
+  .attr("r","10")
+  .attr("fill","blue");
+
+for (var i=0; i<3; i++){
+  d3.select("#size")
+    .append("circle")
+    .attr("cx",1.5*i+1 +"em")
+    .attr("cy","1em")
+    .attr("r",3*i+5)
+    .attr("fill","none")
+    .attr("stroke","white");
+};
+
+
 
 var ylabel = g.append("text")
      .attr("class","y-label")
      .attr("text-anchor","middle")
      .attr("x","-50")
      .attr("y",height/2)
-     .text("User Comment karma(Log 10)");
+     .text("User Comment karma(Log 10)")
+     .attr("fill","#CCCCCC");
 
 
 
@@ -42,7 +68,8 @@ var xlabel = g.append("text")
      .attr("text-anchor","middle")
      .attr("x",width/2)
      .attr("y",height + 50)
-     .text("User Post karma (Log 10)");
+     .text("User Post karma (Log 10)")
+     .attr("fill","#CCCCCC");
 
 
 
@@ -115,7 +142,7 @@ d3.csv("data.csv").then(function(data){
 
     d3.interval(function(){
  	    update(data,xscale,yscale,colorscale);
-    },500);
+    },200);
     update(data,xscale,yscale,colorscale);
 
       
@@ -146,7 +173,7 @@ function update(data,xscale,yscale,colorscale){
     circles.enter()
        .append("circle") 
        .attr("r",function(d){
-       	   return Math.sqrt(d.popularity)/3;
+       	   return Math.sqrt(d.popularity)/3 +.4;
        })
        .attr("cx", function(d,i){
            return xscale(d.price);
