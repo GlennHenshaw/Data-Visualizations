@@ -1,0 +1,71 @@
+<html lang="en">
+    <head>
+    	<meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    	<title>April Fool's Data Viz</title>
+    	<link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"> 
+    	<script type="text/javascript" src="d3/d3.js"></script>
+    </head>
+
+
+
+
+    <body style="background-color: gray">
+
+        <div class="container">
+            <div class="page-header">
+                <h1 id="title">April Fools Reddit Posts and Comments 2019</h1> 
+            </div>
+            <p class="note"> a <span style="color: red">Red bubble</span> is an April Fool's post in r/dataisbeautiful.</p>
+            <p class="note"> a <span style="color: blue">Blue bubble</span> is a comment to April Fool's posts.</p>
+            <p class="note"> The <span><strong>area</strong></span> of a buble is proportional to its "score", i.e upvotes - downvotes</p>
+            <p class = "note"><span><strong>Hover</strong></span> over a buble to get more information</p>
+        </div>
+    
+
+
+
+        <div class="container">
+            <div class="row">
+                <div id="chart-area">
+                    
+                </div>
+                <div class="slidecontainer" id="inner" style="width: 800px; height: 60px;">
+                     <input type="range" min="3" max="11" value="0" class="slider" id="myRange">
+                     <div class="sliderticks">
+        <p>12am</p>
+        <p>2am</p>
+        <p>4am</p>
+        <p>6am</p>
+        <p>8am</p>
+        <p>10am</p>
+        <p>12pm</p>
+        <p>2pm</p>
+        <p>4pm</p>
+        <p>6pm</p>
+        <p>8pm</p>
+        <p>10pm</p>
+        <p>12am</p>
+        <p>2am</p>
+        </div>
+        </div>
+        </div>
+
+        <p><strong>Data source:</strong> The data I used was curated by <a href="https://github.com/charlesjlee/data-viz/tree/master/altair/20190407%20-%20Reddit%2C%20April%20Fool's">charlesjlee</a> using a python api wrapper called PRAW.
+
+
+
+                <div class="sliderticks">
+                
+                </div>
+               </div>
+            </div>
+        </div>
+
+        <!-- <script scr="jquery.js"></script> -->
+       <script type="text/javascript" src="script.js"></script> 
+    </body>
+
+
+</html>
