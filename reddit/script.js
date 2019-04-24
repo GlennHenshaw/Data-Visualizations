@@ -142,7 +142,7 @@ d3.csv("data.csv").then(function(data){
 
     d3.interval(function(){
  	    update(data,xscale,yscale,colorscale);
-    },200);
+    },500);
     update(data,xscale,yscale,colorscale);
 
       
