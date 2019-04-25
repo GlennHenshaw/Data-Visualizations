@@ -14,73 +14,138 @@
     <body style="background-color: #252525">
 
         <div class="container">
+            <div class="row">
+            <div class="col-md-8">
             <div class="page-header">
                 <h1 id="title">April Fools Reddit Posts and Comments 2019</h1> 
             </div>
+           </div>
+  <!--         <div class="col-md-8"></div>
+           <div class="col-md-8"></div> -->
+           </div>
             <div class="row">
 
 
-            <div class="col-xs-7 col-sm-4">    
+            <div class="col-md-8" style="text-align: center;">    
             <p class="note"> <span class="icon"><svg id="red-bubble"></svg></span> is an April Fool's post in r/dataisbeautiful.</p>
             </div>
-
-
-            <div class="col-xs-7 col-sm-4"> 
-            <p class="note"> <span class="icon"><svg id="blue-bubble"></svg></span> is a comment to April Fool's post.</p>
+            <!--<div class="col-md-6"></div> -->
             </div>
 
+             <div class="row">
+            <div class="col-md-8" style="text-align: center;"> 
+            <p class="note"> <span class="icon"><svg id="blue-bubble"></svg></span> is a comment to April Fool's post.</p>
+            </div>
+            </div>
 
-            <div class="col-xs-7 col-sm-4"> 
+            <div class="row">
+
+
+            <div class="col-md-8"> 
             <p class="note"> <span class="icon"><svg id="size"></svg></span> proportional to "score", i.e upvotes - downvotes</p>
             </div>
 
-
         
             </div>
-        </div>
     
 
-
-
-        <div class="container">
             <div class="row">
+                <div class="col-sm">
                 <div id="chart-area">
                     
                 </div>
-                <div class="slidecontainer" id="inner" style="width: 800px; height: 60px;">
-                     <input type="range" min="3" max="11" value="1295" class="slider" id="myRange">
-                     <div class="sliderticks">
-        <p>12am</p>
-        <p>2am</p>
-        <p>4am</p>
-        <p>6am</p>
-        <p>8am</p>
-        <p>10am</p>
-        <p>12pm</p>
-        <p>2pm</p>
-        <p>4pm</p>
-        <p>6pm</p>
-        <p>8pm</p>
-        <p>10pm</p>
-        <p>12am</p>
-        <p>2am</p>
-        </div>
-        </div>
-        </div>
+                </div>
+             </div>   
+            <div class="row">
+                <div class="col-sm">
+        
+                </div>
+                <div class="col-sm-6">    
+        
+                        <p><span id="time"></span></p>
+                        <input type="range" list="tickmarks" id="slider">
+
+                        <datalist id="tickmarks">
+                            <option value="0"> 
+                            <option value="120"> 
+                            <option value="240">    
+                            <option value="360">
+                            <option value="480"> 
+                            <option value="600"> 
+                            <option value="720">    
+                            <option value="840">
+                            <option value="960">
+                            <option value="1080">
+                            <option value="1200">
+                            <option value="1320">
+                            <option value="1440">
+                            <option value="1560">
+                        </datalist>    
+                </div>
+                <div class="col-sm">
+
+                </div>
+           </div>
 
         <p><strong>Data source:</strong> The data I used was curated by <a href="https://github.com/charlesjlee/data-viz/tree/master/altair/20190407%20-%20Reddit%2C%20April%20Fool's">charlesjlee</a> using a python api wrapper called PRAW.
 
-
-
-                <div class="sliderticks">
-                
-                </div>
-               </div>
-            </div>
+ 
         </div>
+       <!--
+        <div class="container">
+           <div class="row">
+            <div class="col-sm">
+                  12am
+            </div>
+           <div class="col-sm">
+                  2am
+           </div>
+           <div class="col-sm">
+                  4am
+           </div>
+            <div class="col-sm">
+                  6am
+           </div>
+           <div class="col-sm">
+                 8am
+           </div>
+           <div class="col-sm">
+                 10am
+           </div>
+            <div class="col-sm">
+                  12pm
+            </div>
+           <div class="col-sm">
+                  2pm
+           </div>
+           <div class="col-sm">
+                  4pm
+           </div>
+            <div class="col-sm">
+                  6pm
+           </div>
+           <div class="col-sm">
+                 8pm
+           </div>
+           <div class="col-sm">
+                 10pm
+           </div>
+           <div class="col-sm">
+                 12am
+           </div>
+           <div class="col-sm">
+                 2am
+           </div>
+
+
+
+           </div>
+        </div>
+         -->
+
 
         <!-- <script scr="jquery.js"></script> -->
-       <script type="text/javascript" src="script.js"></script> 
+       <script type="text/javascript" src="new_script.js"></script> 
     </body>
 
 

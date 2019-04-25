@@ -1,7 +1,7 @@
-
 var margin = {top: 30, right: 20, bottom: 70, left: 70};
 var height = 500 - margin.top - margin.bottom;
 var width = 800 - margin.left - margin.right;
+
 
 var slider = document.getElementById("myRange");
 var slider_value = 0;
@@ -9,14 +9,6 @@ var slider_value = 0;
 var div = d3.select("body").append("div")
     .attr("class", "tooltip")
     .style("opacity", 0);
-
-slider.oninput = function() {
-  slider_value = this.value;
-}
-
-
-var flag = true;
-
 
 var svg = d3.select("#chart-area")
             .append("svg")
@@ -50,8 +42,6 @@ for (var i=0; i<3; i++){
     .attr("stroke","white");
 };
 
-
-
 var ylabel = g.append("text")
      .attr("class","y-label")
      .attr("text-anchor","middle")
@@ -70,15 +60,21 @@ var xlabel = g.append("text")
      .text("User Post karma (Log 10)")
      .attr("fill","#CCCCCC");
 
+slider.oninput = function() {
+  slider_value = this.value;
+  console.log(slider_value);
+}
 
-
+//Load data
 d3.csv("data.csv").then(function(data){
+  // clean data	
   data.forEach(function(d){
     d.price = +d.price;
     d.profit = +d.profit;
     d.popularity = +d.popularity;
     d.time = +d.time;
   })
+  //constants
   var max_price = d3.max(data, function(d){
                 return d.price;
               });
@@ -100,27 +96,20 @@ d3.csv("data.csv").then(function(data){
   var names = data.map(function(d){
     return d.name;
   });
-
-  d3.select("#myRange")
-    .attr("min",min_time - 1)
-    .attr("max",max_time + 1);
-
-    var xscale = d3.scaleLog()
+  console.log(data);
+  // scales and axes
+  var xscale = d3.scaleLog()
                .domain([min_price,max_price])
                .range([0,width]);
-    var yscale = d3.scaleLog()
+  var yscale = d3.scaleLog()
                .domain([min_profit,max_profit])
                .range([height,0]);
-
-    var colorscale = d3.scaleOrdinal()
-                   .domain(names)
-                   .range(['red','green','blue','black','yellow','orange']);
     
-    var xaxiscallable = d3.axisBottom(xscale);
-    var yaxiscallable = d3.axisLeft(yscale)
+  var xaxiscallable = d3.axisBottom(xscale);
+  var yaxiscallable = d3.axisLeft(yscale)
 
 
-    var xaxis = d3.select("#graph")
+  var xaxis = d3.select("#graph")
                   .append("g")
                   .call(xaxiscallable
                     .tickFormat(d3.format(".2s"))
@@ -136,46 +125,23 @@ d3.csv("data.csv").then(function(data){
                   .attr("id","yaxis");
 
 
-   
-    
-
-    d3.interval(function(){
-      update(data,xscale,yscale,colorscale);
-    },500);
-
-    update(data,xscale,yscale,colorscale);
-
       
+    update(data,xscale,yscale);
+  });
+function update(data,xscale,yscale){
 
-}).catch(function(error){
-  console.log(error);
-})
 
-function update(data,xscale,yscale,colorscale){
-   
-    console.log(data); 
-    var newdata = data.filter(function(d){
-      console.log(slider_value);
-      console.log(newdata);
-      return d["time"] <= Number(slider_value);
-    });
 
-   
-        
-
-    var circles = d3.select("#graph")
+	var circles = d3.select("#graph")
                     .selectAll("circle")
-                    .data(newdata);
+                    .data(data)
 
    
-    circles.exit().remove();
+    //circles.exit().remove();
       
 
        
     circles.enter()
-       .append("class",function(d){
-        return d.time;
-       })
        .append("circle") 
        .attr("r",function(d){
            return Math.sqrt(d.popularity)/3 +.4;
@@ -223,6 +189,22 @@ function update(data,xscale,yscale,colorscale){
 
 
 };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
