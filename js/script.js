@@ -22,6 +22,8 @@ var data = [
     {year: 2016, population: 1427}
 ];
 
+var num = 1;
+
 
 // Parse the date / time
 var parseDate = d3.timeParse("%Y");
@@ -72,9 +74,9 @@ yScale.domain([
     ]);
 
 // draw the line created above
-var path = artboard.append("path").data([data])
+var path = artboard.append("path")
         .style('fill', 'none')
-        .style('stroke', 'steelblue')
+        .style('stroke', '#E3BAB3')
         .style('stroke-width', '2px');
 
 // Add the X Axis
@@ -84,7 +86,8 @@ var xAxisEl = artboard.append("g")
 // Add the Y Axis
 // we aren't resizing height in this demo so the yAxis stays static, we don't need to call this every resize
 var yAxisEl = artboard.append("g")
-        .call(yAxis);
+        .call(yAxis)
+        .attr("stroke","#E9DCCD");
 
 //////////////////////////////////////////////
 // Drawing ///////////////////////////////////
@@ -105,12 +108,30 @@ function drawChart() {
     xAxisEl.call(xAxis);
     
     // specify new properties for the line
-    line.x(function(d) { return xScale(d.year); })
-        .y(function(d) { return yScale(d.population); });
+
+    d3.interval(function(){
+        data_new = data.slice(0,num);
+        console.log(data_new);
+
+        path.data([data_new]);
+
+        line.x(function(d) { 
+            return xScale(d.year); })
+        .y(function(d) { 
+            return yScale(d.population); });
+        num = num+1;
+
+        if (num == 17){
+            num = 1;
+            path.exit().remove();
+        }
+
+        path.attr('d', line);
+     },200);
+};
     
-    // draw the path based on the line created above
-    path.attr('d', line);
-}
+    
+
 
 // call this once to draw the chart initially
 drawChart();
