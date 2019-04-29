@@ -77,7 +77,7 @@ yScale.domain([
 var path = artboard.append("path")
         .style('fill', 'none')
         .style('stroke', '#E3BAB3')
-        .style('stroke-width', '2px');
+        .style('stroke-width', '5px');
 
 // Add the X Axis
 var xAxisEl = artboard.append("g")
