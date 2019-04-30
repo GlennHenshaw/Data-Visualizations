@@ -2,12 +2,12 @@
 body {
   font-size: 16px;
   color: #fff;
-  background-color: #36384C; /*. charcoal  */
+  background-color: #2E323C; /*. creosote  */
   font-family: 'Oxygen', sans-serif;
 }
 
 #header-nav {
-  background-color: #849974;
+  background-color: #2B4251; /* slate */
   border-radius: 0;
   border: 0;
 }
@@ -24,11 +24,11 @@ body {
 
 .navbar-brand h1 { /* Name */
   font-family: 'Oxygen', sans-serif;
-  color: #557c3e;
+  color: #91B3BC; /* dew */
   font-size: 1.5em;
   text-transform: uppercase;
   font-weight: bold;
-  text-shadow: 1px 1px 1px #36384C;
+  /*text-shadow: 1px 1px 1px #36384C;*/
   margin-top: 0;
   margin-bottom: 0;
   line-height: .75;
@@ -52,28 +52,43 @@ body {
   margin-top: 10px;
 }
 #nav-list a {
-  color: #613A43;
+  color: #91B3BC; /* dew */
   text-align: center;
 }
 #nav-list a:hover {
-  background: #E9DCCD;
-}
+  color: #DDDDDD; /*. creosote  */
+} 
 #nav-list a span {
   font-size: 1.8em;
 }
 
 
 .navbar-header button.navbar-toggle, .navbar-header .icon-bar {
-  border: 1px solid #61122f;
+  border: 2px solid #91B3BC; /* dew */
+  background-color: #2E323C; /*. creosote*/
+}
+.navbar-header button.navbar-toggle:hover {
+  background-color: #2E323C;
+
+}
+.navbar-header button.navbar-toggle:active {
+  background-color: #2E323C;
+
+}
+.navbar-header button.navbar-toggle:visited {
+  background-color: #2E323C;
+
 }
 .navbar-header button.navbar-toggle {
   clear: both;
-  margin-top: -60px;
+  margin-top: -65px;
+  background-color: #2E323C; /*. creosote  */
 }
+
 
 .container .jumbotron {
 
-  background-color: #36384C
+  background-color: #2E323C; /*. creosote  */
 }
 
 .tick line {
@@ -91,7 +106,9 @@ body {
     height: 500px;
   }
 path.region {
-	fill: #613A43;
+	fill: #45415E;
+  opacity: .4;
+  border: 2px solid black;
 }
 
 
@@ -140,7 +157,7 @@ path.region {
     padding: 0;
   }
   .navbar-brand {
-    padding-top: 10px;
+    padding-top: 25px;
     height:80px;
   }
   /* End Home Page */
@@ -185,9 +202,9 @@ path.region {
     display: block;
     margin: 0 20px;
     padding: 10px;
-    border: 2px solid #fff;
-    background-color: #f6b319;
-    color: #951c49;
+    border: 2px solid black; /* dew */
+    background-color: #91B3BC; /* dew */
+    color: #91B3BC; /* dew */;
   }
   #xs-deliver {
     margin-top: 5px;

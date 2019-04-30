@@ -89,20 +89,21 @@ yScale.domain([
  var path = g.append("path")
         .style('fill', 'none')
         .attr("class","curve")
-        .style('stroke', '#E3BAB3')
+        .style('stroke', '#91B3BC')
         .style('stroke-width', '2px');
 
 
 
 // Add the X Axis
 var xAxisEl = g.append("g")
-        .attr("transform", "translate(0," + height + ")");
+        .attr("transform", "translate(0," + height + ")")
+        .attr("stroke","#91B3BC");
 
 // Add the Y Axis
 // we aren't resizing height in this demo so the yAxis stays static, we don't need to call this every resize
 var yAxisEl = g.append("g")
         .call(yAxis.ticks(5))
-        .attr("stroke","#E9DCCD");
+        .attr("stroke","#91B3BC");
 
 //////////////////////////////////////////////
 // Drawing ///////////////////////////////////
