@@ -1,0 +1,38 @@
+
+/* Basic Bar chart style */
+/* Glenn Henshaw */
+
+/* Axis */
+.axis {
+  font: 10px sans-serif;
+}
+
+.axis path, 
+.axis line {
+	fill: none;
+    stroke: #000;
+    shape-rendering: crispEdges;
+    stroke-width: 1px;
+}
+
+/* Grid */
+
+.grid {
+  font: 0px sans-serif;
+}
+
+.grid line {
+	fill: none;
+    stroke: #FFFFFF;
+    shape-rendering: crispEdges;
+    stroke-width: 2px;
+}
+.grid path {
+	fill:none;
+	opacity:0;
+	stroke-width: 1px;
+}
+
+.grid .tick:nth-child(1) line {
+	opacity: 0;
+}

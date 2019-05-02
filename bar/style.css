@@ -1,0 +1,30 @@
+
+
+.axis {
+  font: 10px sans-serif;
+}
+
+.axis path, 
+.axis line {
+	fill: none;
+    stroke: #000;
+    shape-rendering: crispEdges;
+    stroke-width: 1px;
+}
+
+.grid {
+  font: 0px sans-serif;
+}
+
+.grid line {
+	fill: none;
+    stroke: #FF0000;
+    shape-rendering: crispEdges;
+    stroke-width: 1px;
+}
+.grid path {
+	fill:none;
+	stroke: #00FF00;
+	opacity:.2;
+	stroke-width: 1px;
+}
