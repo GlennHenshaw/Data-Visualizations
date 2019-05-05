@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    	<meta charset="utf-8">
+        <title>Suicide Rates</title>
+        <link rel="stylesheet" type="text/css" href="bootstrap.min.css"> 
+        <link rel="stylesheet" href="style.css">
+        <script type="text/javascript" src="d3.js"></script>
+	</head>
+	<body>
+        <heading>
+         <div class="container">
+             <div class="row">
+                 <div class="col-md">   
+                     <h1>Male and female suicide rates for 101 countries</h1>
+                 </div>
+             </div>           
+        </heading>
+        <div class="row">
+            <div class="col-md">
+                <p>There is a shocking difference between male and female
+                suicide rates. This difference crosses national boundries 
+                and is quite stable through time.</p>
+
+                <p><strong>Hover</strong> over dots to see the respective male and female
+                   trend lines.</p>
+
+                <p class="note"><span class="icon"><svg id="blue-bubble"></svg></span>Male suicide rates.</p>
+                <p class="note"><span class="icon"><svg id="red-bubble"></svg></span>Female suicide rates.</p>
+
+            </div>
+        </div>
+
+            <div class="row">
+            <div class="col-md">
+                <div id="chart-area"></div>
+            </div>
+            </div>
+            
+        </div>
+    </div>
+        <script type="text/javascript" src="script.js"></script> 
+        
+	</body>
+</html>

@@ -1,0 +1,58 @@
+
+h1 {
+  text-align: left;
+  padding-bottom: 15px;
+}
+
+/*svg {
+  position: absolute;
+}*/
+
+.axis {
+  font-size: 12px;
+}
+.icon svg {
+  height: 20px;
+  width: 25px;
+}
+.note {
+  vertical-align: center;
+  margin: 5px 0px 0px 0px;
+}
+
+
+.icon #size{
+  height: 2em;
+  width: 5em;
+}
+
+.labels {
+  text-shadow: 3px 3px 3px white;
+}
+
+.maleline {
+  fill: none;
+  stroke: #08708A;
+  stroke-width: 4px;
+}
+
+.femaleline {
+  fill: none;
+  stroke: #D73A31;
+  stroke-width: 4px;
+}
+
+.femalelineoutter {
+  fill: none;
+  stroke: #FFF;
+  stroke-width: 5px;
+}
+
+.malelineoutter {
+  fill: none;
+  stroke: #FFF;
+  stroke-width: 5px;
+}
+
+
+
